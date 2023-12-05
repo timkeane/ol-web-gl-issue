@@ -10,7 +10,7 @@ const token = '';
 
 const caiUrl ='https://services.arcgis.com/R0IGaIgf2sox9aCY/ArcGIS/rest/services/IL_CAI_CNServer_2023_11_30/FeatureServer/0/query?f=geojson&where=1%3D1&outSR=3857&outFields=Name,Address,City,State,Zip%20as%20ZIP,State,County,LocationID%20as%20Location_ID,CAIType%20as%20Type,broadband_speed%20as%20speed,max_broadband_speed_upload%20as%20max_up';
 
-class RandomValoe extends GeoJSON {
+class RandomValue extends GeoJSON {
   constructor(options) {
     super(options);
     this.idPrefix = options.idPrefix;
@@ -43,7 +43,7 @@ const map = new Map({
 });
 
 const source = new VectorSource({
-  format: new RandomValoe({
+  format: new RandomValue({
     idProp: 'Location_ID',
     idPrefix: 'cai-'
   }),
