@@ -81,3 +81,9 @@ const layer = new WebGLPointsLayer({
 });
 
 map.addLayer(layer);
+
+map.on('singleclick',e => {
+  map.forEachFeatureAtPixel(e.pixel, (feature, layer) => {
+    console.warn(feature.getId(), feature);
+  });
+});
